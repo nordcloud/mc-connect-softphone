@@ -1,0 +1,20 @@
+<%- include('head') %>
+<script src="<%= ASSETS_URL %>/outbound-call.js"></script>
+
+<strong><%= user.name %></strong>
+<a href="/logout">Logout</a>
+
+<hr />
+
+<form>
+  <select onchange="result.value=this.value">
+    <option value="">Select a customer</option>
+    <% customers.forEach((item) => { %>
+    <option value="<%= JSON.stringify(item) %>"><%= item.CustomerName %></option>
+    <% }) %>
+  </select>
+
+  <div style="margin-top: 1em">
+    <output name="result"></output>
+  </div>
+</form>

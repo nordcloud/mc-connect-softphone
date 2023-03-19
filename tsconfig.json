@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "ESNext",
+      
+    ],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ESNext"
+  },
+  "include": [
+    "src",
+    ".eslintrc.cjs",
+    ".prettierrc.cjs",
+    "jest.config.ts"
+  ],
+  "ts-node": {
+    "transpileOnly": true
+  },
+}
