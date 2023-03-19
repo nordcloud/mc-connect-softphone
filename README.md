@@ -24,7 +24,7 @@ Use role `arn:aws:iam::552821478383:role/Nordcloud-MC-Connect`.
 
 **dev**: https://cx1wq7djx5.execute-api.eu-central-1.amazonaws.com
 
-**prod**: [todo]
+**prod**: https://t2yzyfrm23.execute-api.eu-central-1.amazonaws.com
 
 ## Okta setup
 * Sign-in method: OIDC - OpenID Connect
