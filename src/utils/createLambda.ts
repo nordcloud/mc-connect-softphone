@@ -33,9 +33,7 @@ export function createLambda(
         beforeBundling(_, outputDir) {
           const ephemeralDir = `${outputDir}/tmp`;
           return [
-            `mkdir ${ephemeralDir}`,
-            `cp ${htmlDir}/*.ejs ${ephemeralDir} || true`,
-            `cp ${handlerDir}/*.ejs ${ephemeralDir} || true`,
+            `rm -rf ${ephemeralDir} && mkdir ${ephemeralDir} && cp ${htmlDir}/*.ejs ${ephemeralDir} || true && cp ${handlerDir}/*.ejs ${ephemeralDir} || true`,
           ];
         },
         afterBundling() {

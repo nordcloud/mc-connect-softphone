@@ -1,20 +1,18 @@
 import { ITable, Table } from 'aws-cdk-lib/aws-dynamodb';
 import { Construct } from 'constructs';
 
-import { getStageConsts } from '../utils/getStageConsts';
-
-const { OUTBAND_CALLING_TABLE_ARN } = getStageConsts();
+import { CUSTOMERS_TABLE_ARN } from '../consts';
 
 export class Tables extends Construct {
-  public readonly callingTable: ITable;
+  public readonly customersTable: ITable;
 
   constructor(scope: Construct) {
     super(scope, 'Tables');
 
-    this.callingTable = Table.fromTableArn(
+    this.customersTable = Table.fromTableArn(
       this,
-      'OutboundCallingTable',
-      OUTBAND_CALLING_TABLE_ARN
+      'CustomersCallingTable',
+      CUSTOMERS_TABLE_ARN
     );
   }
 }

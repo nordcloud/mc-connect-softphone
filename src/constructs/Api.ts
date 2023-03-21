@@ -10,13 +10,13 @@ import { trimTrailingSlash } from '../utils/trimTrailingSlash';
 
 type Props = {
   assetsUrl: string;
-  callingTable: ITable;
+  customersTable: ITable;
 };
 
 export class Api extends Construct {
   public readonly apiUrl: string;
 
-  constructor(scope: Construct, { assetsUrl, callingTable }: Props) {
+  constructor(scope: Construct, { assetsUrl, customersTable }: Props) {
     super(scope, 'Api');
 
     const httpApi = new HttpApi(this, `${APP_NAME}-api`);
@@ -34,7 +34,7 @@ export class Api extends Construct {
       },
     });
 
-    callingTable.grantReadData(webRootFn);
+    customersTable.grantReadData(webRootFn);
 
     httpApi.addRoutes({
       path: '/',

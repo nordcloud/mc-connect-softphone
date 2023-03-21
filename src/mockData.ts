@@ -9,11 +9,11 @@ export const customersMock = [
   {
     CustomerId: 7,
     CustomerName: 'CocaCola',
-    OutbandNumber: '+2341243',
+    OutboundNumber: '+2341243',
   },
   {
     CustomerId: 5,
     CustomerName: 'Pepsi',
-    OutbandNumber: '+5442342',
+    OutboundNumber: '+5442342',
   },
 ];

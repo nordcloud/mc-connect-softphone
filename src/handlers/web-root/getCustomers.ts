@@ -1,26 +1,24 @@
 import { APIGatewayProxyEventV2 } from 'aws-lambda';
 
+import { CUSTOMERS_TABLE_ARN } from '../../consts';
 import { customersMock } from '../../mockData';
 import { CustomersTableItem } from '../../types';
 import { getStage } from '../../utils/getStage';
-import { getStageConsts } from '../../utils/getStageConsts';
 import { scanDynamoDB } from '../../utils/scanDynamoDB';
-
-const { OUTBAND_CALLING_TABLE_ARN } = getStageConsts();
 
 export async function getCustomers(event: APIGatewayProxyEventV2) {
   const isMockMode =
     getStage() === 'local' &&
-    Object.keys(Object(event.queryStringParameters)).includes('mock_customers');
+    Object.keys(Object(event.queryStringParameters)).includes('mock_db');
 
   if (isMockMode) {
     return customersMock;
   }
 
-  const tableName = OUTBAND_CALLING_TABLE_ARN.split('/').at(-1);
+  const tableName = CUSTOMERS_TABLE_ARN.split('/').at(-1);
 
   if (!tableName) {
-    throw new Error('Missing OutboundCallingTable name');
+    throw new Error('Missing customers table name');
   }
 
   const items = await scanDynamoDB<CustomersTableItem>({ tableName });

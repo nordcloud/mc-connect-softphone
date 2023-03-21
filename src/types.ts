@@ -7,7 +7,6 @@ export type StageConsts = Record<
   {
     OAUTH_BASE_URL: string;
     OAUTH_CLIENT_ID: string;
-    OUTBAND_CALLING_TABLE_ARN: string;
   }
 >;
 
@@ -75,5 +74,5 @@ export type User = {
 export type CustomersTableItem = {
   CustomerId: number;
   CustomerName: string;
-  OutbandNumber: string;
+  OutboundNumber: string;
 };

@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+}
+
+#container {
+  display: grid;
+  height: 100vh;
+  grid-template-areas: 'header' 'main';
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+#header {
+  grid-area: header;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 15px;
+  align-items: center;
+}
+
+#header h1 {
+  margin: 0;
+  margin-inline-end: 12px;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+#header-bar {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-grow: 1;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+#customers-form {
+  margin: 0;
+}
+
+#customers-form fieldset {
+  all: initial;
+}
+
+#phone-app {
+  grid-area: main;
+  position: relative;
+  height: 100%;
+}
+
+#phone-app > iframe {
+  position: absolute;
+  border: none;
+}

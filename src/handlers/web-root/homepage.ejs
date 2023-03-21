@@ -1,20 +1,37 @@
 <%- include('head') %>
-<script src="<%= ASSETS_URL %>/outbound-call.js"></script>
 
-<strong><%= user.name %></strong>
-<a href="/logout">Logout</a>
+<script>
+  window.AWS_CONNECT_URL = '<%= AWS_CONNECT_URL %>';
+</script>
 
-<hr />
+<script src="<%= ASSETS_URL %>/connect-streams-min.js"></script>
+<script src="<%= ASSETS_URL %>/homepage.js"></script>
+<link href="<%= ASSETS_URL %>/homepage.css" rel="stylesheet" />
 
-<form>
-  <select onchange="result.value=this.value">
-    <option value="">Select a customer</option>
-    <% customers.forEach((item) => { %>
-    <option value="<%= JSON.stringify(item) %>"><%= item.CustomerName %></option>
-    <% }) %>
-  </select>
+<div id="container">
+  <div id="header">
+    <h1>Softphone</h1>
 
-  <div style="margin-top: 1em">
-    <output name="result"></output>
+    <div id="header-bar">
+      <form id="customers-form">
+        <fieldset disabled>
+          <select id="customers-select" required>
+            <option value="">Select a customer</option>
+            <% customers.forEach((item) => { %>
+            <option value="<%= JSON.stringify(item) %>"><%= item.CustomerName %></option>
+            <% }) %>
+          </select>
+          <button>Call now</button>
+        </fieldset>
+      </form>
+      <div id="menu-bar">
+        <%= user.email %> |
+        <a href="/logout">Logout</a>
+      </div>
+    </div>
   </div>
-</form>
+
+  <div id="main">
+    <div id="phone-app"></div>
+  </div>
+</div>

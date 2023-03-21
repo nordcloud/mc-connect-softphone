@@ -8,9 +8,9 @@ export class RootStack extends Stack {
   constructor(scope: App, id: string, props: StackProps) {
     super(scope, id, props);
 
-    const { callingTable } = new Tables(this);
+    const { customersTable } = new Tables(this);
     const { assetsUrl } = new Assets(this);
-    const { apiUrl } = new Api(this, { assetsUrl, callingTable });
+    const { apiUrl } = new Api(this, { assetsUrl, customersTable });
 
     new CfnOutput(this, 'ApiUrl', {
       value: apiUrl,

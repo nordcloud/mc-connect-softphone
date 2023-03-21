@@ -9,7 +9,7 @@ import { validateIdToken } from './validateIdToken';
 export async function getUser(event: APIGatewayProxyEventV2) {
   const isMockMode =
     getStage() === 'local' &&
-    Object.keys(Object(event.queryStringParameters)).includes('mock_user');
+    Object.keys(Object(event.queryStringParameters)).includes('mock_login');
 
   if (isMockMode) {
     return userMock;

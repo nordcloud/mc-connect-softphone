@@ -1,5 +1,5 @@
 import { RemovalPolicy } from 'aws-cdk-lib';
-import { Distribution } from 'aws-cdk-lib/aws-cloudfront';
+import { CachePolicy, Distribution } from 'aws-cdk-lib/aws-cloudfront';
 import { S3Origin } from 'aws-cdk-lib/aws-cloudfront-origins';
 import { Bucket } from 'aws-cdk-lib/aws-s3';
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
@@ -17,17 +17,21 @@ export class Assets extends Construct {
       autoDeleteObjects: true,
     });
 
-    const distro = new Distribution(this, 'Distro', {
+    const distribution = new Distribution(this, 'Distro', {
       defaultBehavior: {
         origin: new S3Origin(bucket),
+        cachePolicy: CachePolicy.CACHING_OPTIMIZED,
       },
     });
 
-    this.assetsUrl = `https://${distro.domainName}`;
+    const destinationKeyPrefix = new Date().toISOString();
 
     new BucketDeployment(this, 'Deployment', {
       sources: [Source.asset(path.join(__dirname, '..', 'assets'))],
       destinationBucket: bucket,
+      destinationKeyPrefix,
     });
+
+    this.assetsUrl = `https://${distribution.domainName}/${destinationKeyPrefix}`;
   }
 }
