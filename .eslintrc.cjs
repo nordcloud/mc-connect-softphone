@@ -4,7 +4,7 @@ module.exports = {
     browser: true,
   },
   extends: ['airbnb', 'airbnb-typescript', 'plugin:prettier/recommended'],
-  ignorePatterns: ['!.*', 'cdk.out'],
+  ignorePatterns: ['!.*', 'cdk.out', '**/assets/*-min.js'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
