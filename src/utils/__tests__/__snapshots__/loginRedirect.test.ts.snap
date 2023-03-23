@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loginRedirect calls cookie.serialize with correct args 1`] = `
+[
+  [
+    "loginFlowState",
+    "{"stateNonce":"randomBase64Value","idTokenNonce":"randomBase64Value","codeVerifier":"randomBase64Value"}",
+    {
+      "httpOnly": true,
+      "sameSite": "lax",
+      "secure": true,
+    },
+  ],
+]
+`;
+
+exports[`loginRedirect calls randomBase64 with correct args 1`] = `
+[
+  [
+    128,
+  ],
+  [
+    128,
+  ],
+  [
+    96,
+  ],
+]
+`;
+
+exports[`loginRedirect rejects with a correct value when LOGIN_CALLABCK_URL is missing 1`] = `[Error: Missing LOGIN_CALLABCK_URL]`;
+
+exports[`loginRedirect resolves with a correct value 1`] = `
+{
+  "cookies": [
+    "dummyCookieSerializeValue",
+  ],
+  "headers": {
+    "location": "https://nordcloud.okta.com/oauth2/v1/authorize?client_id=---please+add+prod+oauth+client+id---&code_challenge=mGTxtN-qAtITFzktbpDTLspPVhDJXlUJyOIIjyDopd0&code_challenge_method=S256&nonce=randomBase64Value&redirect_uri=dummyLoginCallbackUrl&response_type=code&scope=openid+profile+email&state=randomBase64Value",
+  },
+  "statusCode": 302,
+}
+`;

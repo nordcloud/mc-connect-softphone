@@ -18,12 +18,14 @@ export async function getUser(event: APIGatewayProxyEventV2) {
   const idToken = getCookie(event, ID_TOKEN_COOKIE);
 
   if (!idToken) {
+    console.log('Missing idTokenCookie');
     return undefined;
   }
 
   const validationResult = await validateIdToken(idToken);
 
   if (!validationResult.active) {
+    console.log('ID Token is inactive');
     return undefined;
   }
 

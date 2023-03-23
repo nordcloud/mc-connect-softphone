@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getIdTokenPayload returns a correct value 1`] = `
+{
+  "iat": 1516239022,
+  "name": "John Doe",
+  "sub": "1234567890",
+}
+`;

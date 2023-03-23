@@ -5,15 +5,15 @@ import { Construct } from 'constructs';
 import deepmerge from 'deepmerge';
 import path from 'path';
 
-import { APP_NAME } from '../consts';
-import { getStage } from './getStage';
+import { APP_NAME } from '../../consts';
+import { getStage } from '../getStage';
 
 export function createLambda(
   scope: Construct,
   id: string,
   props: Partial<NodejsFunctionProps> = {}
 ) {
-  const rootDir = path.join(__dirname, '..');
+  const rootDir = path.join(__dirname, '..', '..');
   const htmlDir = path.join(rootDir, 'html');
   const handlerDir = path.join(rootDir, 'handlers', id);
 

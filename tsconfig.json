@@ -19,7 +19,9 @@
     "src",
     ".eslintrc.cjs",
     ".prettierrc.cjs",
-    "jest.config.ts"
+    "jest.config.ts",
+    "setupTests.ts",
+    "__mocks__"
   ],
   "ts-node": {
     "transpileOnly": true

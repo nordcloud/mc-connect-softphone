@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getCookie calls cookie.parse with correct args 1`] = `
+[
+  [
+    "dummyCookie",
+  ],
+]
+`;
+
+exports[`getCookie returns a correct value 1`] = `"dummyCookieValue"`;
+
+exports[`getCookie returns a correct value when event.cookies is missing 1`] = `undefined`;

@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderHTML calls renderFile with correct arguments 1`] = `
+[
+  [
+    "./tmp/dummyFileName.ejs",
+    {
+      "ASSETS_URL": "dummyAssetsUrl",
+      "OAUTH_BASE_URL": "https://nordcloud.okta.com/oauth2/v1",
+      "appVersion": "0.0.1",
+    },
+    {},
+    [Function],
+  ],
+]
+`;
+
+exports[`renderHTML rejects with a correct value when renderFile rejects 1`] = `"dummyRenderFileError"`;
+
+exports[`renderHTML rejects with correct value when ASSETS_URL is missing 1`] = `[Error: Missing ASSETS_URL]`;
+
+exports[`renderHTML resolves with a correct value 1`] = `
+{
+  "body": "dummyRenderFileHTML",
+  "headers": {
+    "Content-Type": "text/html",
+  },
+  "statusCode": 200,
+}
+`;
+
+exports[`renderHTML resolves with a correct value when second arg is present 1`] = `
+[
+  [
+    "./tmp/dummyFileName.ejs",
+    {
+      "ASSETS_URL": "dummyAssetsUrl",
+      "OAUTH_BASE_URL": "https://nordcloud.okta.com/oauth2/v1",
+      "appVersion": "0.0.1",
+      "dummyDataKey": "dummyDataValue",
+    },
+    {},
+    [Function],
+  ],
+]
+`;
+
+exports[`renderHTML resolves with a correct value when third arg is present 1`] = `
+[
+  [
+    "./tmp/dummyFileName.ejs",
+    {
+      "ASSETS_URL": "dummyAssetsUrl",
+      "OAUTH_BASE_URL": "https://nordcloud.okta.com/oauth2/v1",
+      "appVersion": "0.0.1",
+    },
+    {
+      "dummyOption": "dummyOptionVaue",
+    },
+    [Function],
+  ],
+]
+`;

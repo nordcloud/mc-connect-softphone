@@ -5,7 +5,7 @@ import { getStageConsts } from './getStageConsts';
 
 const { OAUTH_BASE_URL, OAUTH_CLIENT_ID } = getStageConsts();
 
-export async function validateIdToken(idToken: string) {
+export async function validateIdToken(token: string) {
   console.log('Validating ID token');
 
   const res = await fetch(`${OAUTH_BASE_URL}/introspect`, {
@@ -13,7 +13,7 @@ export async function validateIdToken(idToken: string) {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({
       client_id: OAUTH_CLIENT_ID,
-      token: idToken,
+      token,
       token_type_hint: 'id_token',
     }),
   });

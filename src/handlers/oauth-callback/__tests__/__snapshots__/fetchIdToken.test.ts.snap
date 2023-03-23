@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetchIdToken calls assertLoginFlowCookie with correct args 1`] = `
+[
+  [
+    {
+      "codeVerifier": "dummyCodeVerifier",
+      "idTokenNonce": "dummyIdTokenNonce",
+      "stateNonce": "dummyStateNonce",
+    },
+  ],
+]
+`;
+
+exports[`fetchIdToken calls fetch with correct args 1`] = `
+[
+  [
+    "https://nordcloud.okta.com/oauth2/v1/token",
+    {
+      "body": URLSearchParams {
+        Symbol(query): [
+          "code",
+          "dummyCode",
+          "code_verifier",
+          "dummyCodeVerifier",
+          "grant_type",
+          "authorization_code",
+          "redirect_uri",
+          "dummyLoginCallbackUrl",
+          "client_id",
+          "---please add prod oauth client id---",
+        ],
+        Symbol(context): null,
+      },
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      "method": "POST",
+    },
+  ],
+]
+`;
+
+exports[`fetchIdToken calls getCookie with correct args 1`] = `
+[
+  [
+    {
+      "queryStringParameters": {
+        "code": "dummyCode",
+        "state": "dummyStateNonce",
+      },
+    },
+    "loginFlowState",
+  ],
+]
+`;
+
+exports[`fetchIdToken calls getIdTokenPayload with correct args 1`] = `
+[
+  [
+    "dummyIdToken",
+  ],
+]
+`;
+
+exports[`fetchIdToken resolves with a correct value 1`] = `
+{
+  "id_token": "dummyIdToken",
+}
+`;
+
+exports[`fetchIdToken when "fetch" response has "error" prop rejects with a correct value 1`] = `[Error: dummyError: dummyErrorDescription]`;
+
+exports[`fetchIdToken when "nonce" from getIdTokenPayload do not match with nonce from loginFlow cookie resolves with a correct value 1`] = `undefined`;
+
+exports[`fetchIdToken when "state" url params do not match with stateNonce from loginFlow cookie resolves with a correct value 1`] = `undefined`;
+
+exports[`fetchIdToken when LOGIN_CALLABCK_URL is missing rejects with a correct value 1`] = `[Error: Missing LOGIN_CALLABCK_URL]`;
+
+exports[`fetchIdToken when checkOAuthUrlParams returnes false resolves with a correct value 1`] = `undefined`;
+
+exports[`fetchIdToken when getCookie returnes undefined resolves with a correct value 1`] = `undefined`;

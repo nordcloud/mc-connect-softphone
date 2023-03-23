@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`assertLoginFlowCookie throws when "codeVerifier" is falsy 1`] = `"Missing codeVerifier in loginFlowCookie"`;
+
+exports[`assertLoginFlowCookie throws when "idTokenNonce" is falsy 1`] = `"Missing idTokenNonce in loginFlowCookie"`;
+
+exports[`assertLoginFlowCookie throws when "stateNonce" is falsy 1`] = `"Missing stateNonce in loginFlowCookie"`;
+
+exports[`assertLoginFlowCookie throws when arg is not an object 1`] = `"Bad loginFlowCookie value"`;

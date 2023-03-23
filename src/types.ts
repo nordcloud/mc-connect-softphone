@@ -1,6 +1,6 @@
 import { stageConsts } from './consts';
 
-export type StageName = keyof typeof stageConsts;
+export type Stage = keyof typeof stageConsts;
 
 export type StageConsts = Record<
   string,

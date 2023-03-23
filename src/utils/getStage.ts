@@ -1,20 +1,10 @@
-import { stageConsts } from '../consts';
-import { StageName } from '../types';
+import { Stage } from '../types';
+import { assertStageName } from './assertStageName';
 
-export function getStage() {
+export function getStage(): Stage {
   const { STAGE } = process.env;
 
-  if (STAGE === undefined) {
-    throw new Error('Missing STAGE');
-  }
-
-  if (!checkStageName(STAGE)) {
-    throw new Error('Invalid STAGE name');
-  }
+  assertStageName(STAGE);
 
   return STAGE;
-}
-
-function checkStageName(name?: string): name is StageName {
-  return Object.keys(stageConsts).includes(name as StageName);
 }

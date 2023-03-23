@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`oauth-callback handler calls cookie.serialize with correct args 1`] = `
+[
+  [
+    "idToken",
+    "dummyIdToken",
+    {
+      "expires": 2023-03-24T00:40:16.529Z,
+      "httpOnly": true,
+      "secure": true,
+    },
+  ],
+]
+`;
+
+exports[`oauth-callback handler calls fetchIdToken with correct args 1`] = `
+[
+  [
+    "dummyEvent",
+  ],
+]
+`;
+
+exports[`oauth-callback handler resolves with a correct value 1`] = `
+{
+  "cookies": [
+    "dummyCookieSerializeValue",
+  ],
+  "headers": {
+    "location": "/",
+  },
+  "statusCode": 302,
+}
+`;
+
+exports[`oauth-callback handler when idTokenData is missing resolves with a correct value 1`] = `
+{
+  "cookies": [],
+  "headers": {
+    "location": "/",
+  },
+  "statusCode": 302,
+}
+`;
+
+exports[`oauth-callback handler when stage is "local" calls cookie.serialize with correct args 1`] = `
+[
+  [
+    "idToken",
+    "dummyIdToken",
+    {
+      "expires": 2023-03-24T00:40:16.529Z,
+      "httpOnly": true,
+      "secure": false,
+    },
+  ],
+]
+`;

@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getuser calls getCookie with correct args 1`] = `
+[
+  [
+    {},
+    "idToken",
+  ],
+]
+`;
+
+exports[`getuser calls validateIdToken with correct args 1`] = `
+[
+  [
+    "dummyCookieValue",
+  ],
+]
+`;
+
+exports[`getuser resolves with a correct value 1`] = `
+{
+  "email": "dummyEmail",
+  "name": "dummyName",
+  "sub": "dummySub",
+}
+`;
+
+exports[`getuser resolves with a correct value when ID token is invalid 1`] = `undefined`;
+
+exports[`getuser resolves with a correct value when ID token is missing 1`] = `undefined`;
+
+exports[`getuser when running in mock mode resolves with a correct value in "local" stage 1`] = `
+{
+  "email": "mocked.user@domain.com",
+  "idToken": "mockedUserIdToken",
+  "name": "Mocked User",
+  "sub": "mockedUserSub",
+}
+`;
+
+exports[`getuser when running in mock mode resolves with a correct value in "prod" stage 1`] = `
+{
+  "email": "dummyEmail",
+  "name": "dummyName",
+  "sub": "dummySub",
+}
+`;

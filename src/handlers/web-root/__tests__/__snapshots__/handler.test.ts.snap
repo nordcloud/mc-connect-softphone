@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`web-root handler calls getCustomers with correct args 1`] = `
+[
+  [
+    "dummyEvent",
+  ],
+]
+`;
+
+exports[`web-root handler calls getUser with correct args 1`] = `
+[
+  [
+    "dummyEvent",
+  ],
+]
+`;
+
+exports[`web-root handler calls renderHTML with correct args 1`] = `
+[
+  [
+    "homepage",
+    {
+      "AWS_CONNECT_URL": "https://nordcloud-connect.my.connect.aws/ccp-v2/softphone",
+      "customers": {
+        "CustomerId": "dummyCustomerId",
+        "CustomerName": "dummyCustomerName",
+        "OutboundNumber": "dummyOutboundNumber",
+      },
+      "user": {
+        "email": "dummyEmail",
+        "idToken": "dummyIdToken",
+        "name": "dummyName",
+        "sub": "dummySub",
+      },
+    },
+  ],
+]
+`;
+
+exports[`web-root handler resolves with a correct value 1`] = `"dummyHTML"`;
+
+exports[`web-root handler when user is undefined calls loginRedirect with correct args 1`] = `
+[
+  [],
+]
+`;
+
+exports[`web-root handler when user is undefined resolves with a correct value 1`] = `"dummyLoginRedirect"`;

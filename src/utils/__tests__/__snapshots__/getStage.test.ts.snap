@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getStage calls assertStageName with correct args 1`] = `
+[
+  [
+    "dummyStageName",
+  ],
+]
+`;
+
+exports[`getStage returns a correct value 1`] = `"dummyStageName"`;

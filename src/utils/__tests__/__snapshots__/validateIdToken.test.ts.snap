@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`validateIdToken calls fetch with correct args 1`] = `
+[
+  [
+    "https://nordcloud.okta.com/oauth2/v1/introspect",
+    {
+      "body": URLSearchParams {
+        Symbol(query): [
+          "client_id",
+          "---please add prod oauth client id---",
+          "token",
+          "dummyIdToken",
+          "token_type_hint",
+          "id_token",
+        ],
+        Symbol(context): null,
+      },
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      "method": "POST",
+    },
+  ],
+]
+`;
+
+exports[`validateIdToken rejects with a correct value when "fetch" response has "error" prop 1`] = `[Error: dummyError: dummyErrorDescription]`;

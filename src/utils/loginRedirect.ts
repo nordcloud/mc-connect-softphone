@@ -8,18 +8,20 @@ import { getStageConsts } from './getStageConsts';
 import { randomBase64 } from './randomBase64';
 
 const { OAUTH_BASE_URL, OAUTH_CLIENT_ID } = getStageConsts();
-const { LOGIN_CALLABCK_URL } = process.env;
 
 export function loginRedirect() {
   return oauthRedirect();
 }
 
-export async function oauthRedirect() {
+async function oauthRedirect() {
+  const { LOGIN_CALLABCK_URL } = process.env;
+
   if (!LOGIN_CALLABCK_URL) {
     throw new Error('Missing LOGIN_CALLABCK_URL');
   }
 
   const oauthUrl = new URL(`${OAUTH_BASE_URL}/authorize`);
+
   const stateNonce = await randomBase64(128);
   const idTokenNonce = await randomBase64(128);
   const codeVerifier = await randomBase64(96);

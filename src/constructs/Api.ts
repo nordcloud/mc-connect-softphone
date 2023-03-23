@@ -5,7 +5,7 @@ import { HttpMethod } from 'aws-cdk-lib/aws-events';
 import { Construct } from 'constructs';
 
 import { APP_NAME } from '../consts';
-import { createLambda } from '../utils/createLambda';
+import { createLambda } from '../utils/constructsHelpers/createLambda';
 import { trimTrailingSlash } from '../utils/trimTrailingSlash';
 
 type Props = {

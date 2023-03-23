@@ -1,5 +1,6 @@
 import { APIGatewayProxyEventV2 } from 'aws-lambda';
 import fetch from 'node-fetch';
+import { JsonValue } from 'type-fest';
 
 import { LOGIN_FLOW_COOKIE } from '../../consts';
 import { OauthAuthorizeResponse } from '../../types';
@@ -10,25 +11,29 @@ import { assertLoginFlowCookie } from './assertLoginFlowCookie';
 import { checkOAuthUrlParams } from './checkOAuthUrlParams';
 
 const { OAUTH_BASE_URL, OAUTH_CLIENT_ID } = getStageConsts();
-const { LOGIN_CALLABCK_URL } = process.env;
 
 export async function fetchIdToken(event: APIGatewayProxyEventV2) {
+  const { LOGIN_CALLABCK_URL } = process.env;
+
   if (!LOGIN_CALLABCK_URL) {
     throw new Error('Missing LOGIN_CALLABCK_URL');
   }
 
   if (!checkOAuthUrlParams(event.queryStringParameters)) {
+    console.log('Invalid OAuth callback url params');
     return undefined;
   }
 
   const { state, code } = event.queryStringParameters;
+
   const loginFlowCookieJSON = getCookie(event, LOGIN_FLOW_COOKIE);
 
   if (!loginFlowCookieJSON) {
+    console.log('Missing loginFlowCookie');
     return undefined;
   }
 
-  const loginFlowCookie = JSON.parse(loginFlowCookieJSON) as unknown;
+  const loginFlowCookie = JSON.parse(loginFlowCookieJSON) as JsonValue;
 
   assertLoginFlowCookie(loginFlowCookie);
 

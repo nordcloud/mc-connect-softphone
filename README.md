@@ -19,6 +19,7 @@ Optional URL params:
 The server will restart on every file change. If it crashes - restart it manually. Changes in in the *src/assets* folder are picked without restarting the server.
 
 Troubleshooting:
+- *Session expired* — You need to log in with *AWS Connect SAML SSO*. Look for the link in [id.nordcloud.com](https://id.nordcloud.com). If you don't see the link [request access](https://nordcloud.atlassian.net/servicedesk/customer/portal/223/group/327/create/2570).
 - *The security token included in the request is invalid* — The AWS credentials are expired or missing. Lambda is trying to connect to DynamoDB.
 
 ## Deployment

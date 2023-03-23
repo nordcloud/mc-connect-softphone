@@ -22,16 +22,18 @@ function initPhoneApp() {
     customersFieldset.disabled = false;
 
     customersForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
       const customerData = JSON.parse(customersSelect.value);
       const endpoint = connect.Endpoint.byPhoneNumber(customerData.OutboundNumber);
 
       agent.connect(endpoint, {
         failure: (err) => {
           const { type, message } = JSON.parse(err);
+          // eslint-disable-next-line no-alert
           alert(`${type}: ${message}`);
         },
       });
-      event.preventDefault();
     });
   });
 }

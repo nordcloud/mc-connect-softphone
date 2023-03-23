@@ -6,17 +6,18 @@ import packageJson from '../../package.json';
 import { getStageConsts } from './getStageConsts';
 
 const { OAUTH_BASE_URL } = getStageConsts();
-const { ASSETS_URL } = process.env;
-
-if (!ASSETS_URL) {
-  throw new Error('Missing ASSETS_URL');
-}
 
 export async function renderHTML(
   filename: string,
   data: { [name: string]: any } = {},
   options: Options = {}
 ) {
+  const { ASSETS_URL } = process.env;
+
+  if (!ASSETS_URL) {
+    throw new Error('Missing ASSETS_URL');
+  }
+
   const defaultData = {
     appVersion: packageJson.version,
     ASSETS_URL,

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`randomBase64 calls crypto.randomBytes with correct args 1`] = `
+[
+  [
+    64,
+  ],
+]
+`;
+
+exports[`randomBase64 resolves with a correct value 1`] = `"dummyRandomBytesToString"`;

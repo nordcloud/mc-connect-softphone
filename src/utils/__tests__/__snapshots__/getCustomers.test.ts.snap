@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getCustomers calls scanDynamoDB with correct args 1`] = `
+[
+  [
+    {
+      "tableName": "Connect-Outbound-Calling-Table",
+    },
+  ],
+]
+`;
+
+exports[`getCustomers resolves with a correct value 1`] = `
+[
+  {
+    "CustomerName": "abc",
+  },
+  {
+    "CustomerName": "xyz",
+  },
+]
+`;
+
+exports[`getCustomers when running in mock mode resolves with a correct value in "local" stage 1`] = `
+[
+  {
+    "CustomerId": "mockedCustomerId",
+    "CustomerName": "mockedCustomerName",
+    "OutboundNumber": "mockedCustomerOutboundNumber",
+  },
+]
+`;
+
+exports[`getCustomers when running in mock mode resolves with a correct value in "prod" stage 1`] = `
+[
+  {
+    "CustomerName": "abc",
+  },
+  {
+    "CustomerName": "xyz",
+  },
+]
+`;
