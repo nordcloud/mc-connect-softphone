@@ -1,3 +1,5 @@
+import path from 'path';
+
 import type { StageConsts } from './types';
 
 export const AWS_ACCOUNT = '552821478383';
@@ -6,6 +8,7 @@ export const APP_NAME = `mc-connect-softphone-${process.env.STAGE}`;
 
 export const ID_TOKEN_COOKIE = 'idToken';
 export const LOGIN_FLOW_COOKIE = 'loginFlowState';
+export const CALLER_ID_TABLE = `${APP_NAME}-agents-caller-id`;
 
 export const AWS_CONNECT_URL =
   'https://nordcloud-connect.my.connect.aws/ccp-v2/softphone';
@@ -27,3 +30,6 @@ export const stageConsts = {
   dev,
   local: dev,
 } satisfies StageConsts;
+
+export const HTML_DIR = path.join(__dirname, 'html');
+export const HANDLERS_DIR = path.join(__dirname, 'handlers');

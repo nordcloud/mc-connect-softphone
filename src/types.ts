@@ -10,6 +10,18 @@ export type StageConsts = Record<
   }
 >;
 
+export type User = {
+  sub: string;
+  name: string;
+  email: string;
+};
+
+export type CustomersTableItem = {
+  CustomerId: number;
+  CustomerName: string;
+  OutboundNumber: string;
+};
+
 export type OauthAuthorizeResponse =
   | {
       access_token: string;
@@ -62,17 +74,4 @@ export type IdTokenPayload = {
   preferred_username: string;
   auth_time: number;
   at_hash: string;
-};
-
-export type User = {
-  sub: string;
-  name: string;
-  email: string;
-  idToken: string;
-};
-
-export type CustomersTableItem = {
-  CustomerId: number;
-  CustomerName: string;
-  OutboundNumber: string;
 };

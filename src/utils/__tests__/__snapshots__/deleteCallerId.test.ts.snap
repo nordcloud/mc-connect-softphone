@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`deleteCallerId resolves with a correct value 1`] = `"dummyCallerId"`;
+
+exports[`deleteCallerId resolves with a correct value when item use not found 1`] = `undefined`;
+
+exports[`deleteCallerId sends "DeleteCommand" with correct args 1`] = `
+{
+  "Key": {
+    "username": "username",
+  },
+  "ReturnValues": "ALL_OLD",
+  "TableName": "mc-connect-softphone-prod-agents-caller-id",
+}
+`;

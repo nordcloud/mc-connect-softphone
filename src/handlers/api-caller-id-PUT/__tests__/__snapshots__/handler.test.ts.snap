@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api-caller-id-PUT calls getUser with correct args 1`] = `
+[
+  [
+    {
+      "body": "dummyEventBody",
+    },
+  ],
+]
+`;
+
+exports[`api-caller-id-PUT calls putCallerId with correct args 1`] = `
+[
+  [
+    {
+      "callerId": "dummyEventBody",
+      "user": {
+        "email": "dummyEmail",
+        "name": "dummyName",
+        "sub": "dummySub",
+      },
+    },
+  ],
+]
+`;
+
+exports[`api-caller-id-PUT rejects with a correct value when event.body is missing 1`] = `[Error: Missing event body]`;
+
+exports[`api-caller-id-PUT resolves with a correct value 1`] = `
+{
+  "statusCode": 204,
+}
+`;
+
+exports[`api-caller-id-PUT resolves with a correct value when user is undefined 1`] = `
+{
+  "statusCode": 401,
+}
+`;

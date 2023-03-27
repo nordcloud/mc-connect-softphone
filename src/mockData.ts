@@ -1,9 +1,10 @@
+import { User } from './types';
+
 export const userMock = {
   name: 'Mocked User',
   email: 'mocked.user@domain.com',
   sub: 'mockedUserSub',
-  idToken: 'mockedUserIdToken',
-};
+} satisfies User;
 
 export const customersMock = [
   {

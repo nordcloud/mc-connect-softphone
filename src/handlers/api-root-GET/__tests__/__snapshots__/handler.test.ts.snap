@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api-root-GET calls deleteCallerId with correct args 1`] = `
+[
+  [
+    "dummyEmail",
+  ],
+]
+`;
+
+exports[`api-root-GET calls getCustomers with correct args 1`] = `
+[
+  [
+    "dummyEvent",
+  ],
+]
+`;
+
+exports[`api-root-GET calls getUser with correct args 1`] = `
+[
+  [
+    "dummyEvent",
+  ],
+]
+`;
+
+exports[`api-root-GET calls renderHTML with correct args 1`] = `
+[
+  [
+    "homepage",
+    {
+      "AWS_CONNECT_URL": "https://nordcloud-connect.my.connect.aws/ccp-v2/softphone",
+      "customers": {
+        "CustomerId": "dummyCustomerId",
+        "CustomerName": "dummyCustomerName",
+        "OutboundNumber": "dummyOutboundNumber",
+      },
+      "user": {
+        "email": "dummyEmail",
+        "name": "dummyName",
+        "sub": "dummySub",
+      },
+    },
+  ],
+]
+`;
+
+exports[`api-root-GET resolves with a correct value 1`] = `"dummyHTML"`;
+
+exports[`api-root-GET when user is undefined calls loginRedirect with correct args 1`] = `
+[
+  [],
+]
+`;
+
+exports[`api-root-GET when user is undefined resolves with a correct value 1`] = `"dummyLoginRedirect"`;

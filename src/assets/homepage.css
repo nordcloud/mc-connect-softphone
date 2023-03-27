@@ -14,41 +14,44 @@ body {
   grid-area: header;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
   padding: 10px 15px;
-  align-items: center;
+}
+
+#main-bar {
+  display: flex;
+  flex-grow: 1;
+  gap: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
 }
 
 #header h1 {
   margin: 0;
-  margin-inline-end: 12px;
   font-size: 19px;
   font-weight: 500;
+  margin-inline-end: 50px;
 }
 
-#header-bar {
-  display: flex;
-  flex-wrap: wrap-reverse;
-  flex-grow: 1;
-  gap: 10px;
-  justify-content: space-between;
-}
-
-#customers-form {
+#caller-id-form {
   margin: 0;
 }
 
-#customers-form fieldset {
+#caller-id-form fieldset {
   all: initial;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px;
 }
 
-#phone-app {
+#ccp-container {
   grid-area: main;
   position: relative;
   height: 100%;
 }
 
-#phone-app > iframe {
+#ccp-container > iframe {
   position: absolute;
   border: none;
 }

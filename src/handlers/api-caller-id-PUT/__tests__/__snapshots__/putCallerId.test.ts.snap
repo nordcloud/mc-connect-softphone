@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`putCallerId resolves with a correct value 1`] = `{}`;
+
+exports[`putCallerId sends "PutCommand" with correct args 1`] = `
+{
+  "Item": {
+    "callerId": "dummyCallerId",
+    "username": "dummyUserEmail",
+  },
+  "TableName": "mc-connect-softphone-prod-agents-caller-id",
+}
+`;

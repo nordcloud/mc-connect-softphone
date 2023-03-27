@@ -9,7 +9,7 @@ jest.mock('../../../utils/getStage');
 
 const args = ['dummyEvent'] as unknown as Parameters<typeof handler>;
 
-describe('oauth-callback handler', () => {
+describe('api-oauth-callback-GET', () => {
   it('calls fetchIdToken with correct args', async () => {
     await handler(...args);
     expect(jest.mocked(fetchIdToken).mock.calls).toMatchSnapshot();

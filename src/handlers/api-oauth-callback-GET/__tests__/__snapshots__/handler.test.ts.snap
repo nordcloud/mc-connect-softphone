@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`oauth-callback handler calls cookie.serialize with correct args 1`] = `
+exports[`api-oauth-callback-GET calls cookie.serialize with correct args 1`] = `
 [
   [
     "idToken",
@@ -14,7 +14,7 @@ exports[`oauth-callback handler calls cookie.serialize with correct args 1`] = `
 ]
 `;
 
-exports[`oauth-callback handler calls fetchIdToken with correct args 1`] = `
+exports[`api-oauth-callback-GET calls fetchIdToken with correct args 1`] = `
 [
   [
     "dummyEvent",
@@ -22,7 +22,7 @@ exports[`oauth-callback handler calls fetchIdToken with correct args 1`] = `
 ]
 `;
 
-exports[`oauth-callback handler resolves with a correct value 1`] = `
+exports[`api-oauth-callback-GET resolves with a correct value 1`] = `
 {
   "cookies": [
     "dummyCookieSerializeValue",
@@ -34,7 +34,7 @@ exports[`oauth-callback handler resolves with a correct value 1`] = `
 }
 `;
 
-exports[`oauth-callback handler when idTokenData is missing resolves with a correct value 1`] = `
+exports[`api-oauth-callback-GET when idTokenData is missing resolves with a correct value 1`] = `
 {
   "cookies": [],
   "headers": {
@@ -44,7 +44,7 @@ exports[`oauth-callback handler when idTokenData is missing resolves with a corr
 }
 `;
 
-exports[`oauth-callback handler when stage is "local" calls cookie.serialize with correct args 1`] = `
+exports[`api-oauth-callback-GET when stage is "local" calls cookie.serialize with correct args 1`] = `
 [
   [
     "idToken",

@@ -2,15 +2,15 @@ import { App, CfnOutput, Stack, StackProps } from 'aws-cdk-lib';
 
 import { Api } from './Api';
 import { Assets } from './Assets';
-import { Tables } from './Tables';
+import { CallerID } from './CallerID';
 
 export class RootStack extends Stack {
   constructor(scope: App, id: string, props: StackProps) {
     super(scope, id, props);
 
-    const { customersTable } = new Tables(this);
+    const { customersTable, callerIdTable } = new CallerID(this);
     const { assetsUrl } = new Assets(this);
-    const { apiUrl } = new Api(this, { assetsUrl, customersTable });
+    const { apiUrl } = new Api(this, { assetsUrl, customersTable, callerIdTable });
 
     new CfnOutput(this, 'ApiUrl', {
       value: apiUrl,

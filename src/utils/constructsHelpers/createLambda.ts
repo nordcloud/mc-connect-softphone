@@ -3,9 +3,8 @@ import { Runtime } from 'aws-cdk-lib/aws-lambda';
 import { NodejsFunction, NodejsFunctionProps } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Construct } from 'constructs';
 import deepmerge from 'deepmerge';
-import path from 'path';
 
-import { APP_NAME } from '../../consts';
+import { APP_NAME, HANDLERS_DIR, HTML_DIR } from '../../consts';
 import { getStage } from '../getStage';
 
 export function createLambda(
@@ -13,14 +12,12 @@ export function createLambda(
   id: string,
   props: Partial<NodejsFunctionProps> = {}
 ) {
-  const rootDir = path.join(__dirname, '..', '..');
-  const htmlDir = path.join(rootDir, 'html');
-  const handlerDir = path.join(rootDir, 'handlers', id);
+  const handlerDir = `${HANDLERS_DIR}/${id}`;
 
   const defaultProps: NodejsFunctionProps = {
     functionName: `${APP_NAME}-${id}`,
-    memorySize: 256,
     entry: `${handlerDir}/handler.ts`,
+    memorySize: 256,
     runtime: Runtime.NODEJS_18_X,
     environment: {
       STAGE: getStage(),
@@ -33,7 +30,7 @@ export function createLambda(
         beforeBundling(_, outputDir) {
           const ephemeralDir = `${outputDir}/tmp`;
           return [
-            `rm -rf ${ephemeralDir} && mkdir ${ephemeralDir} && cp ${htmlDir}/*.ejs ${ephemeralDir} || true && cp ${handlerDir}/*.ejs ${ephemeralDir} || true`,
+            `rm -rf ${ephemeralDir} && mkdir ${ephemeralDir} && cp ${HTML_DIR}/*.ejs ${ephemeralDir} || true && cp ${handlerDir}/*.ejs ${ephemeralDir} || true`,
           ];
         },
         afterBundling() {

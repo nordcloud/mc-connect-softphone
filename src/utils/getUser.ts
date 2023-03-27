@@ -2,11 +2,12 @@ import { APIGatewayProxyEventV2 } from 'aws-lambda';
 
 import { ID_TOKEN_COOKIE } from '../consts';
 import { userMock } from '../mockData';
+import { User } from '../types';
 import { getCookie } from './getCookie';
 import { getStage } from './getStage';
 import { validateIdToken } from './validateIdToken';
 
-export async function getUser(event: APIGatewayProxyEventV2) {
+export async function getUser(event: APIGatewayProxyEventV2): Promise<User | undefined> {
   const isMockMode =
     getStage() === 'local' &&
     Object.keys(Object(event.queryStringParameters)).includes('mock_login');

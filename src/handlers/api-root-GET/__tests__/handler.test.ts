@@ -1,3 +1,4 @@
+import { deleteCallerId } from '../../../utils/deleteCallerId';
 import { getCustomers } from '../../../utils/getCustomers';
 import { getUser } from '../../../utils/getUser';
 import { loginRedirect } from '../../../utils/loginRedirect';
@@ -8,10 +9,11 @@ jest.mock('../../../utils/getCustomers');
 jest.mock('../../../utils/getUser');
 jest.mock('../../../utils/loginRedirect');
 jest.mock('../../../utils/renderHTML');
+jest.mock('../../../utils/deleteCallerId');
 
 const args = ['dummyEvent'] as unknown as Parameters<typeof handler>;
 
-describe('web-root handler', () => {
+describe('api-root-GET', () => {
   it('calls getUser with correct args', async () => {
     await handler(...args);
     expect(jest.mocked(getUser).mock.calls).toMatchSnapshot();
@@ -20,6 +22,11 @@ describe('web-root handler', () => {
   it('calls renderHTML with correct args', async () => {
     await handler(...args);
     expect(jest.mocked(renderHTML).mock.calls).toMatchSnapshot();
+  });
+
+  it('calls deleteCallerId with correct args', async () => {
+    await handler(...args);
+    expect(jest.mocked(deleteCallerId).mock.calls).toMatchSnapshot();
   });
 
   it('calls getCustomers with correct args', async () => {

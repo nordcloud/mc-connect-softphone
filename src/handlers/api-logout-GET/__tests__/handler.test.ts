@@ -11,7 +11,7 @@ beforeEach(() => {
   process.env.API_URL = 'dummyApiUrl';
 });
 
-describe('logout handler', () => {
+describe('api-logout-GET', () => {
   it('calls getCookie with correct args', async () => {
     await handler(...args);
     expect(jest.mocked(getCookie).mock.calls).toMatchSnapshot();

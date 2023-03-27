@@ -1,16 +1,16 @@
-/* global AWS_CONNECT_URL, connect  */
+/* global connect, AWS_CONNECT_URL  */
+
+// https://github.com/amazon-connect/amazon-connect-streams/blob/master/Documentation.md
 
 window.addEventListener('DOMContentLoaded', () => {
-  initPhoneApp(); // https://github.com/amazon-connect/amazon-connect-streams/blob/master/Documentation.md
+  init();
 });
 
-function initPhoneApp() {
-  const customersForm = document.getElementById('customers-form');
-  const customersSelect = document.getElementById('customers-select');
-  const customersFieldset = customersForm.querySelector('fieldset');
-  const phoneContainer = document.getElementById('phone-app');
+function init() {
+  const callerIdSelect = document.getElementById('caller-id-select');
+  const ccpContainer = document.getElementById('ccp-container');
 
-  connect.core.initCCP(phoneContainer, {
+  connect.core.initCCP(ccpContainer, {
     ccpUrl: AWS_CONNECT_URL,
     softphone: {
       allowFramedSoftphone: true,
@@ -18,22 +18,10 @@ function initPhoneApp() {
     },
   });
 
-  connect.agent((agent) => {
-    customersFieldset.disabled = false;
-
-    customersForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-
-      const customerData = JSON.parse(customersSelect.value);
-      const endpoint = connect.Endpoint.byPhoneNumber(customerData.OutboundNumber);
-
-      agent.connect(endpoint, {
-        failure: (err) => {
-          const { type, message } = JSON.parse(err);
-          // eslint-disable-next-line no-alert
-          alert(`${type}: ${message}`);
-        },
-      });
+  callerIdSelect.addEventListener('change', (event) => {
+    fetch('/caller-id', {
+      method: 'put',
+      body: event.target.value,
     });
   });
 }

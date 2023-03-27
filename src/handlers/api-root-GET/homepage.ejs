@@ -12,19 +12,21 @@
   <div id="header">
     <h1>Softphone</h1>
 
-    <div id="header-bar">
-      <form id="customers-form">
-        <fieldset disabled>
-          <select id="customers-select" required>
-            <option value="">Select a customer</option>
+    <div id="main-bar">
+      <form id="caller-id-form">
+        <fieldset>
+          <label for="caller-id-select">Caller ID:</label>
+          <select id="caller-id-select">
+            <option value="">Default</option>
             <% customers.forEach((item) => { %>
-            <option value="<%= JSON.stringify(item) %>"><%= item.CustomerName %></option>
+            <option value="<%= item.OutboundNumber %>">
+              <%= item.CustomerName %> (<%= item.OutboundNumber %>)
+            </option>
             <% }) %>
           </select>
-          <button>Call now</button>
         </fieldset>
       </form>
-      <div id="menu-bar">
+      <div id="profile-bar">
         <%= user.email %> |
         <a href="/logout">Logout</a>
       </div>
@@ -32,6 +34,6 @@
   </div>
 
   <div id="main">
-    <div id="phone-app"></div>
+    <div id="ccp-container"></div>
   </div>
 </div>

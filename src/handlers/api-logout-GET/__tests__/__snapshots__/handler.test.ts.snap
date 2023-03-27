@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api-logout-GET calls cookie.serialize with correct args 1`] = `
+[
+  [
+    "idToken",
+    "",
+  ],
+]
+`;
+
+exports[`api-logout-GET calls getCookie with correct args 1`] = `
+[
+  [
+    "dummyEvent",
+    "idToken",
+  ],
+]
+`;
+
+exports[`api-logout-GET resolves with a correct value 1`] = `
+{
+  "cookies": [
+    "dummyCookieSerializeValue",
+  ],
+  "headers": {
+    "location": "https://nordcloud.okta.com/oauth2/v1/logout?id_token_hint=dummyCookieValue&post_logout_redirect_uri=dummyApiUrl",
+  },
+  "statusCode": 302,
+}
+`;
+
+exports[`api-logout-GET when API_URL is missing rejects with a correct value 1`] = `[Error: Missing API_URL]`;
+
+exports[`api-logout-GET when ID token cookie is missing calls cookie.serialize with correct args 1`] = `
+[
+  [
+    "idToken",
+    "",
+  ],
+]
+`;

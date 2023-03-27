@@ -32,7 +32,6 @@ exports[`getuser resolves with a correct value when ID token is missing 1`] = `u
 exports[`getuser when running in mock mode resolves with a correct value in "local" stage 1`] = `
 {
   "email": "mocked.user@domain.com",
-  "idToken": "mockedUserIdToken",
   "name": "Mocked User",
   "sub": "mockedUserSub",
 }
