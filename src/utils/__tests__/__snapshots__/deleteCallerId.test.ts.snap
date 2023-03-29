@@ -2,7 +2,7 @@
 
 exports[`deleteCallerId resolves with a correct value 1`] = `"dummyCallerId"`;
 
-exports[`deleteCallerId resolves with a correct value when item use not found 1`] = `undefined`;
+exports[`deleteCallerId resolves with a correct value when output from DeleteCommand is empty 1`] = `undefined`;
 
 exports[`deleteCallerId sends "DeleteCommand" with correct args 1`] = `
 {

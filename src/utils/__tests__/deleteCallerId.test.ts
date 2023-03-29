@@ -22,7 +22,7 @@ describe('deleteCallerId', () => {
     return expect(deleteCallerId(...args)).resolves.toMatchSnapshot();
   });
 
-  it('resolves with a correct value when item use not found', () => {
+  it('resolves with a correct value when output from DeleteCommand is empty', () => {
     ddbMock.on(DeleteCommand).resolvesOnce({});
     return expect(deleteCallerId(...args)).resolves.toMatchSnapshot();
   });
