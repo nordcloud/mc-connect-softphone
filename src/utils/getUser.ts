@@ -19,7 +19,7 @@ export async function getUser(event: APIGatewayProxyEventV2): Promise<User | und
   const idToken = getCookie(event, ID_TOKEN_COOKIE);
 
   if (!idToken) {
-    console.log('Missing idTokenCookie');
+    console.log('Missing ID Token');
     return undefined;
   }
 
@@ -32,9 +32,5 @@ export async function getUser(event: APIGatewayProxyEventV2): Promise<User | und
 
   const { sub, name, email } = validationResult;
 
-  return {
-    sub,
-    name,
-    email,
-  };
+  return { sub, name, email };
 }

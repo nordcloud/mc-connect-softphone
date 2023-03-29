@@ -13,8 +13,6 @@ export class CallerID extends Construct {
   constructor(scope: Construct) {
     super(scope, 'CallerID');
 
-    const outboundFlowFn = createLambda(this, 'connect-outbound-flow');
-
     const callerIdTable = new Table(this, 'CallerIdTable', {
       tableName: CALLER_ID_TABLE,
       partitionKey: {
@@ -24,6 +22,8 @@ export class CallerID extends Construct {
       billingMode: BillingMode.PAY_PER_REQUEST,
       removalPolicy: RemovalPolicy.DESTROY,
     });
+
+    const outboundFlowFn = createLambda(this, 'connect-outbound-flow');
 
     callerIdTable.grantWriteData(outboundFlowFn);
 

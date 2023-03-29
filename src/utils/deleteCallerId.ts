@@ -1,6 +1,5 @@
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
 import { DeleteCommand, DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
-import { DynamoReturnValues } from 'aws-cdk-lib/aws-stepfunctions-tasks';
 
 import { CALLER_ID_TABLE } from '../consts';
 
@@ -11,14 +10,10 @@ export async function deleteCallerId(username: string) {
   const deleteCommand = new DeleteCommand({
     TableName: CALLER_ID_TABLE,
     Key: { username },
-    ReturnValues: DynamoReturnValues.ALL_OLD,
+    ReturnValues: 'ALL_OLD',
   });
 
   const { Attributes } = await ddbDocClient.send(deleteCommand);
 
-  if (!Attributes) {
-    return undefined;
-  }
-
-  return Attributes.callerId;
+  return Attributes?.callerId;
 }

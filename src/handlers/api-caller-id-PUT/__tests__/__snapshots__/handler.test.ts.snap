@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`api-caller-id-PUT calls deleteCallerId with correct args when event body is missing 1`] = `
+[
+  [
+    "dummyEmail",
+  ],
+]
+`;
+
 exports[`api-caller-id-PUT calls getUser with correct args 1`] = `
 [
   [
@@ -24,8 +32,6 @@ exports[`api-caller-id-PUT calls putCallerId with correct args 1`] = `
   ],
 ]
 `;
-
-exports[`api-caller-id-PUT rejects with a correct value when event.body is missing 1`] = `[Error: Missing event body]`;
 
 exports[`api-caller-id-PUT resolves with a correct value 1`] = `
 {
