@@ -4,6 +4,8 @@ exports[`deleteCallerId resolves with a correct value 1`] = `"dummyCallerId"`;
 
 exports[`deleteCallerId resolves with a correct value when output from DeleteCommand is empty 1`] = `undefined`;
 
+exports[`deleteCallerId resolves with a correct value when running in "local" stage 1`] = `"mockedCallerId"`;
+
 exports[`deleteCallerId sends "DeleteCommand" with correct args 1`] = `
 {
   "Key": {

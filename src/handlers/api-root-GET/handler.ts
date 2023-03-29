@@ -16,7 +16,7 @@ export const handler: APIGatewayProxyHandlerV2 = async (event) => {
 
   await deleteCallerId(user.email);
 
-  const customers = await getCustomers(event);
+  const customers = await getCustomers();
 
   return renderHTML('homepage', {
     AWS_CONNECT_URL,

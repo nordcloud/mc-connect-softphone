@@ -21,23 +21,12 @@ exports[`getCustomers resolves with a correct value 1`] = `
 ]
 `;
 
-exports[`getCustomers when running in mock mode resolves with a correct value in "local" stage 1`] = `
+exports[`getCustomers resolves with a correct value when running in "local" stage 1`] = `
 [
   {
     "CustomerId": "mockedCustomerId",
     "CustomerName": "mockedCustomerName",
     "OutboundNumber": "mockedCustomerOutboundNumber",
-  },
-]
-`;
-
-exports[`getCustomers when running in mock mode resolves with a correct value in "prod" stage 1`] = `
-[
-  {
-    "CustomerName": "abc",
-  },
-  {
-    "CustomerName": "xyz",
   },
 ]
 `;

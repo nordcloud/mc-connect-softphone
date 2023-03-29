@@ -36,18 +36,8 @@ describe('getuser', () => {
     expect(getUser(event)).resolves.toMatchSnapshot();
   });
 
-  describe('when running in mock mode', () => {
-    const eventClone = {
-      queryStringParameters: { mock_login: '' },
-    } as unknown as APIGatewayProxyEventV2;
-
-    it('resolves with a correct value in "prod" stage', () => {
-      expect(getUser(eventClone)).resolves.toMatchSnapshot();
-    });
-
-    it('resolves with a correct value in "local" stage', () => {
-      jest.mocked(getStage).mockReturnValueOnce('local');
-      expect(getUser(eventClone)).resolves.toMatchSnapshot();
-    });
+  it('resolves with a correct value when running in "local" stage', () => {
+    jest.mocked(getStage).mockReturnValueOnce('local');
+    expect(getUser(event)).resolves.toMatchSnapshot();
   });
 });

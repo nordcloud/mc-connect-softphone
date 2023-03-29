@@ -12,10 +12,6 @@ Start local API:
 - `npm start` 
 - Go to http://localhost:3000
 
-Optional URL params:
-- `mock_login` - skips login
-- `mock_db` - skips call to dynamodb
-
 The server will restart on every file change. If it crashes - restart it manually. Changes in in the *src/assets* folder are picked without restarting the server.
 
 Troubleshooting:

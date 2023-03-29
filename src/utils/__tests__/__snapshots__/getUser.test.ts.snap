@@ -29,18 +29,10 @@ exports[`getuser resolves with a correct value when ID token is invalid 1`] = `u
 
 exports[`getuser resolves with a correct value when ID token is missing 1`] = `undefined`;
 
-exports[`getuser when running in mock mode resolves with a correct value in "local" stage 1`] = `
+exports[`getuser resolves with a correct value when running in "local" stage 1`] = `
 {
   "email": "mocked.user@domain.com",
   "name": "Mocked User",
   "sub": "mockedUserSub",
-}
-`;
-
-exports[`getuser when running in mock mode resolves with a correct value in "prod" stage 1`] = `
-{
-  "email": "dummyEmail",
-  "name": "dummyName",
-  "sub": "dummySub",
 }
 `;

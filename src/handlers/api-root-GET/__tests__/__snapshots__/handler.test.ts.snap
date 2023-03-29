@@ -10,9 +10,7 @@ exports[`api-root-GET calls deleteCallerId with correct args 1`] = `
 
 exports[`api-root-GET calls getCustomers with correct args 1`] = `
 [
-  [
-    "dummyEvent",
-  ],
+  [],
 ]
 `;
 

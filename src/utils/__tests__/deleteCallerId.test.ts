@@ -2,6 +2,9 @@ import { DeleteCommand, DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
 import { mockClient } from 'aws-sdk-client-mock';
 
 import { deleteCallerId } from '../deleteCallerId';
+import { getStage } from '../getStage';
+
+jest.mock('../getStage');
 
 const ddbMock = mockClient(DynamoDBDocumentClient);
 
@@ -25,5 +28,10 @@ describe('deleteCallerId', () => {
   it('resolves with a correct value when output from DeleteCommand is empty', () => {
     ddbMock.on(DeleteCommand).resolvesOnce({});
     return expect(deleteCallerId(...args)).resolves.toMatchSnapshot();
+  });
+
+  it('resolves with a correct value when running in "local" stage', () => {
+    jest.mocked(getStage).mockReturnValueOnce('local');
+    expect(deleteCallerId(...args)).resolves.toMatchSnapshot();
   });
 });

@@ -1,17 +1,11 @@
-import { APIGatewayProxyEventV2 } from 'aws-lambda';
-
 import { CUSTOMERS_TABLE_ARN } from '../consts';
 import { customersMock } from '../mockData';
 import { CustomersTableItem } from '../types';
 import { getStage } from './getStage';
 import { scanDynamoDB } from './scanDynamoDB';
 
-export async function getCustomers(event: APIGatewayProxyEventV2) {
-  const isMockMode =
-    getStage() === 'local' &&
-    Object.keys(Object(event.queryStringParameters)).includes('mock_db');
-
-  if (isMockMode) {
+export async function getCustomers() {
+  if (getStage() === 'local') {
     return customersMock;
   }
 
