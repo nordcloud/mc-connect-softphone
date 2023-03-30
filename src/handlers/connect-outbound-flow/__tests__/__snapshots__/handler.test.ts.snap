@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`connect-outbound-flow-handler calls deleteCallerId with correct args 1`] = `
+exports[`connect-outbound-flow-handler calls getCallerId with correct args 1`] = `
 [
   [
     "dummyUsername",
@@ -8,7 +8,7 @@ exports[`connect-outbound-flow-handler calls deleteCallerId with correct args 1`
 ]
 `;
 
-exports[`connect-outbound-flow-handler rejects when Username is missing from event parameters 1`] = `[Error: Missing Username]`;
+exports[`connect-outbound-flow-handler rejects when Username is missing from event parameters 1`] = `[Error: Missing username]`;
 
 exports[`connect-outbound-flow-handler resolves with a correct value 1`] = `
 {

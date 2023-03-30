@@ -25,7 +25,7 @@ export class CallerID extends Construct {
 
     const outboundFlowFn = createLambda(this, 'connect-outbound-flow');
 
-    callerIdTable.grantWriteData(outboundFlowFn);
+    callerIdTable.grantReadData(outboundFlowFn);
 
     const customersTable = Table.fromTableArn(
       this,

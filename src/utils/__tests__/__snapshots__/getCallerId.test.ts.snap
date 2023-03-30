@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getCallerId resolves with a correct value 1`] = `"dummyCallerId"`;
+
+exports[`getCallerId resolves with a correct value when output from GetCommand is empty 1`] = `undefined`;
+
+exports[`getCallerId resolves with a correct value when running in "local" stage 1`] = `"mockedCallerId"`;
+
+exports[`getCallerId sends "GetCommand" with correct args 1`] = `
+{
+  "Key": {
+    "username": "username",
+  },
+  "TableName": "mc-connect-softphone-prod-agents-caller-id",
+}
+`;
