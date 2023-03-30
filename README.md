@@ -35,7 +35,7 @@ Troubleshooting:
 * Application type: Single-Page Application
 * Proof Key for Code Exchange (PKCE): enabled
 * Grant type: Authorization Code
-* Sign-in redirect URIs: api-url/login-callback
+* Sign-in redirect URIs: api-url/oauth-callback
 * Sign-out redirect URIs: api-url
 
 ## Amazon Connect integration
