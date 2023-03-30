@@ -2,7 +2,7 @@
 
 exports[`putCallerId resolves with a correct value 1`] = `
 {
-  "expiresTimestampSeconds": 1679495260,
+  "expiresTimestampSeconds": 1679495560,
 }
 `;
 
@@ -10,7 +10,7 @@ exports[`putCallerId sends "PutCommand" with correct args 1`] = `
 {
   "Item": {
     "callerId": "dummyCallerId",
-    "expires": 1679495260,
+    "expires": 1679495560,
     "username": "dummyUserEmail",
   },
   "TableName": "mc-connect-softphone-prod-agents-caller-id",
