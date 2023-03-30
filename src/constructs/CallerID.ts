@@ -19,6 +19,7 @@ export class CallerID extends Construct {
         name: 'username',
         type: AttributeType.STRING,
       },
+      timeToLiveAttribute: 'expires',
       billingMode: BillingMode.PAY_PER_REQUEST,
       removalPolicy: RemovalPolicy.DESTROY,
     });

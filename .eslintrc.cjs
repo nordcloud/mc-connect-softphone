@@ -26,5 +26,6 @@ module.exports = {
     'vars-on-top': 'off',
     'no-plusplus': 'off',
     'no-new': 'off',
+    'no-alert': 'off',
   },
 };

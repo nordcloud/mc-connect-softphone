@@ -1,13 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`api-caller-id-PUT calls deleteCallerId with correct args when event body is missing 1`] = `
-[
-  [
-    "dummyEmail",
-  ],
-]
-`;
-
 exports[`api-caller-id-PUT calls getUser with correct args 1`] = `
 [
   [
@@ -33,9 +25,25 @@ exports[`api-caller-id-PUT calls putCallerId with correct args 1`] = `
 ]
 `;
 
+exports[`api-caller-id-PUT calls putCallerId with correct args when event body is missing 1`] = `
+[
+  [
+    {
+      "callerId": "",
+      "user": {
+        "email": "dummyEmail",
+        "name": "dummyName",
+        "sub": "dummySub",
+      },
+    },
+  ],
+]
+`;
+
 exports[`api-caller-id-PUT resolves with a correct value 1`] = `
 {
-  "statusCode": 204,
+  "body": "{"expiresTimestampSeconds":1234567890}",
+  "statusCode": 200,
 }
 `;
 

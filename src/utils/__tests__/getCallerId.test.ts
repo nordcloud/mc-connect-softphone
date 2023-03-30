@@ -12,7 +12,12 @@ const args = ['username'] as const;
 
 beforeEach(() => {
   ddbMock.reset();
-  ddbMock.on(GetCommand).resolves({ Item: { callerId: 'dummyCallerId' } });
+  ddbMock.on(GetCommand).resolves({
+    Item: {
+      callerId: 'dummyCallerId',
+      expires: 1685431260,
+    },
+  });
 });
 
 describe('getCallerId', () => {
@@ -27,6 +32,11 @@ describe('getCallerId', () => {
 
   it('resolves with a correct value when output from GetCommand is empty', () => {
     ddbMock.on(GetCommand).resolvesOnce({});
+    return expect(getCallerId(...args)).resolves.toMatchSnapshot();
+  });
+
+  it('resolves with a correct value when the ddb item is expired', () => {
+    ddbMock.on(GetCommand).resolvesOnce({ Item: { expires: 1234 } });
     return expect(getCallerId(...args)).resolves.toMatchSnapshot();
   });
 

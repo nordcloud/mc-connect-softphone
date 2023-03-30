@@ -8,6 +8,7 @@
     "typecheck": "tsc",
     "lint": "eslint ./",
     "test": "jest",
+    "test:watch": "npm run test -- --watch",
     "synth:prod": "STAGE=prod npx cdk synth --quiet",
     "synth:dev": "rm -rf ./cdk.out && STAGE=dev npx cdk synth --quiet",
     "api": "npm run synth:dev && sam local start-api -t ./cdk.out/mc-connect-softphone-dev.template.json -n ./sam.env.json -s ../src/assets --host localhost",

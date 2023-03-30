@@ -6,6 +6,8 @@ exports[`getCallerId resolves with a correct value when output from GetCommand i
 
 exports[`getCallerId resolves with a correct value when running in "local" stage 1`] = `"mockedCallerId"`;
 
+exports[`getCallerId resolves with a correct value when the ddb item is expired 1`] = `undefined`;
+
 exports[`getCallerId sends "GetCommand" with correct args 1`] = `
 {
   "Key": {

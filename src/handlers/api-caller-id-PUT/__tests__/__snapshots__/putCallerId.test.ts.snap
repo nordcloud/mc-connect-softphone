@@ -1,11 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`putCallerId resolves with a correct value 1`] = `{}`;
+exports[`putCallerId resolves with a correct value 1`] = `
+{
+  "expiresTimestampSeconds": 1679495260,
+}
+`;
 
 exports[`putCallerId sends "PutCommand" with correct args 1`] = `
 {
   "Item": {
     "callerId": "dummyCallerId",
+    "expires": 1679495260,
     "username": "dummyUserEmail",
   },
   "TableName": "mc-connect-softphone-prod-agents-caller-id",

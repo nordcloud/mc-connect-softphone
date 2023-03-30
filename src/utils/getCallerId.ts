@@ -19,5 +19,9 @@ export async function getCallerId(username: string) {
 
   const { Item } = await ddbDocClient.send(getCommand);
 
-  return Item?.callerId;
+  if (!Item || Item.expires < Date.now() / 1000) {
+    return undefined;
+  }
+
+  return Item.callerId;
 }

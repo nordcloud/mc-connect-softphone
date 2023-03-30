@@ -1,10 +1,8 @@
-import { deleteCallerId } from '../../../utils/deleteCallerId';
 import { getUser } from '../../../utils/getUser';
 import { handler } from '../handler';
 import { putCallerId } from '../putCallerId';
 
 jest.mock('../../../utils/getUser');
-jest.mock('../../../utils/deleteCallerId');
 jest.mock('../putCallerId');
 
 const args = [{ body: 'dummyEventBody' }] as unknown as Parameters<typeof handler>;
@@ -20,11 +18,11 @@ describe('api-caller-id-PUT', () => {
     expect(jest.mocked(putCallerId).mock.calls).toMatchSnapshot();
   });
 
-  it('calls deleteCallerId with correct args when event body is missing', async () => {
+  it('calls putCallerId with correct args when event body is missing', async () => {
     const argsClone = structuredClone(args);
     delete argsClone[0].body;
     await handler(...argsClone);
-    expect(jest.mocked(deleteCallerId).mock.calls).toMatchSnapshot();
+    expect(jest.mocked(putCallerId).mock.calls).toMatchSnapshot();
   });
 
   it('resolves with a correct value', () => {

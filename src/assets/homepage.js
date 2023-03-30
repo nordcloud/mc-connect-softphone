@@ -30,13 +30,24 @@ function init() {
     callerIdLoader.hidden = false;
     callerIdCheckmark.hidden = true;
 
-    await fetch('/caller-id', {
+    const res = await fetch('/caller-id', {
       method: 'put',
       body: callerId,
     });
 
-    callerIdFieldset.disabled = false;
-    callerIdLoader.hidden = true;
-    callerIdCheckmark.hidden = false;
+    if (res.ok) {
+      const { expiresTimestampSeconds } = await res.json();
+      const expiresMills = expiresTimestampSeconds * 1000 - Date.now();
+
+      setTimeout(() => {
+        callerIdSelect.value = '';
+      }, expiresMills);
+
+      callerIdFieldset.disabled = false;
+      callerIdLoader.hidden = true;
+      callerIdCheckmark.hidden = false;
+    } else {
+      alert('Failed to set Caller ID');
+    }
   }
 }
