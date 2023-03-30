@@ -9,9 +9,11 @@ export const handler: ConnectContactFlowHandler = async (event) => {
     throw new Error('Missing username');
   }
 
-  const callerId = await getCallerId(username);
+  const callerId = (await getCallerId(username)) || null;
+
+  console.log(`Using call id number "${callerId}" for user "${username}"`);
 
   return {
-    caller_id: callerId || null,
+    caller_id: callerId,
   };
 };
