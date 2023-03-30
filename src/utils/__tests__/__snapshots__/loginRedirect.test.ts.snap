@@ -36,7 +36,7 @@ exports[`loginRedirect resolves with a correct value 1`] = `
     "dummyCookieSerializeValue",
   ],
   "headers": {
-    "location": "https://nordcloud.okta.com/oauth2/v1/authorize?client_id=---please+add+prod+oauth+client+id---&code_challenge=mGTxtN-qAtITFzktbpDTLspPVhDJXlUJyOIIjyDopd0&code_challenge_method=S256&nonce=randomBase64Value&redirect_uri=dummyLoginCallbackUrl&response_type=code&scope=openid+profile+email&state=randomBase64Value",
+    "location": "https://nordcloud.okta.com/oauth2/v1/authorize?client_id=0oaqyrebtuY1eagfS357&code_challenge=mGTxtN-qAtITFzktbpDTLspPVhDJXlUJyOIIjyDopd0&code_challenge_method=S256&nonce=randomBase64Value&redirect_uri=dummyLoginCallbackUrl&response_type=code&scope=openid+profile+email&state=randomBase64Value",
   },
   "statusCode": 302,
 }

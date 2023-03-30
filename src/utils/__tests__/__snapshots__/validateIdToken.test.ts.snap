@@ -8,7 +8,7 @@ exports[`validateIdToken calls fetch with correct args 1`] = `
       "body": URLSearchParams {
         Symbol(query): [
           "client_id",
-          "---please add prod oauth client id---",
+          "0oaqyrebtuY1eagfS357",
           "token",
           "dummyIdToken",
           "token_type_hint",

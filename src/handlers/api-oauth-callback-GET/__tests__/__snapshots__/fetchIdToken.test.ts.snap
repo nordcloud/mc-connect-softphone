@@ -28,7 +28,7 @@ exports[`fetchIdToken calls fetch with correct args 1`] = `
           "redirect_uri",
           "dummyLoginCallbackUrl",
           "client_id",
-          "---please add prod oauth client id---",
+          "0oaqyrebtuY1eagfS357",
         ],
         Symbol(context): null,
       },

@@ -46,8 +46,3 @@ Troubleshooting:
 [Connect Dashboard](https://nordcloud-connect.my.connect.aws/home) > Contact Flow > Whisper Outbound Flow
 * Add a "Invoke AWS Lambda function* block. Choose the lambda for "connect-contact-flow". Add a function input parameter - Destination Key: `Username`, (Set Dynamically) Namespace: *Agent*, Value: *User name*. Timeout: 8
 * Add a "Call Phone Number” block, link it to the the previous block. Set "Caller ID number to display" > User Attribute > Namespace: External > Value: `caller_id`,
-
-## Todo
-- Setup Okta for prod
-- Add `OAUTH_CLIENT_ID` for prod to `src/consts`
-- Add prod api url to AWS Connect [Approved domains](https://eu-central-1.console.aws.amazon.com/connect/v2/app/settings/approved-origins)
