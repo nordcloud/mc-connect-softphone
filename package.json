@@ -27,7 +27,7 @@
     "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.69.0-alpha.0",
     "@aws-sdk/client-dynamodb": "^3.294.0",
     "@aws-sdk/lib-dynamodb": "^3.294.0",
-    "aws-cdk-lib": "2.69.0",
+    "aws-cdk-lib": "2.80.0",
     "constructs": "^10.1.279",
     "cookie": "^0.5.0",
     "deepmerge": "^4.3.0",
